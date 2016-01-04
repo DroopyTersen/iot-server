@@ -18,8 +18,8 @@ app.post('/trigger', function(req, res) {
     console.log("HERE");
     console.log(req.body);
     try {
-        if (req.body && req.body.key && req.body.target) {
-            iotEvents.trigger(req.body.key, req.body.payload || {}, req.body.target);
+        if (req.body && req.body.type && req.body.target) {
+            iotEvents.trigger(req.body.type, req.body.payload || {}, req.body.target);
             res.send("success");
         } else {
             res.send("fail");
