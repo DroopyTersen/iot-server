@@ -8,6 +8,7 @@ exports.start = function (iot) {
     var esp2866_One = new Esp2866("192.168.1.193", iot)
     esp2866_One.registerOutlet("Corner Light", 0);
     esp2866_One.registerOutlet("Fish Tank", 1);
+    esp2866_One.registerOutlet("Lamp", 2);
     outlets = outlets.concat(esp2866_One.outlets);
 
     for (var i = 0; i < outlets.length; i++) {
