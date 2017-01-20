@@ -5,13 +5,13 @@ var Esp2866 = function(ip, iot) {
 }
 
 Esp2866.prototype.registerOutlet = function(name, outlet) {
-    var relay = { name, outlet,ip: this.ip, type: "esp2866" };
+    var relay = { name, outlet,ip: this.ip, type: "esp8266" };
     relay.on = () => {
-        var payload = { outlet: relay.outlet, ip: this.ip, type: "esp2866", state: 1 };
+        var payload = { outlet: relay.outlet, ip: this.ip, type: "esp8266", state: 1 };
         this.iot.trigger("toggle-power", payload);
     }
     relay.off = () => {
-        var payload = { outlet: relay.outlet, ip: this.ip, type: "esp2866", state: 0 };
+        var payload = { outlet: relay.outlet, ip: this.ip, type: "esp8266", state: 0 };
         this.iot.trigger("toggle-power", payload);
     }
     this.outlets.push(relay);

@@ -7,7 +7,7 @@ fauxmoServer.start(server.iot);
 
 var request = require("request-promise-native");
 server.iot.subscribe("toggle-power", function(payload) {
-    if (payload && payload.type === "esp2866") {
+    if (payload && payload.type.startsWith("esp")) {
         var url = `http://${payload.ip}/relay/${payload.outlet}/${payload.state}`
         request.get(url);
     }
