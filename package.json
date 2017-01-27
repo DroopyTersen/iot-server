@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "droopy-iot": "^2.1.0",
+    "droopy-iot": "^2.2.0",
     "request": "^2.79.0",
     "request-promise-native": "^1.0.3",
     "wemore": "^0.3.0"
